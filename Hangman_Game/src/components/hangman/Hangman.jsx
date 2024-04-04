@@ -94,43 +94,46 @@ const HEAD = (
   const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 //  let numberOfGuesses=3;
   
-  export function Hangman({ inCorrectLetter }) {
+  export function Hangman({ inCorrectLetter,CorrectLetter }) {
     
     return (
       
        <>
         <div className="container">
+     {
+      CorrectLetter?'You won the game':
       <div style={{ position: "relative" }}>
-        {BODY_PARTS.slice(0, inCorrectLetter)}
-        <div
-          style={{
-            height: "50px",
-            width: "10px",
-            background: "black",
-            position: "absolute",
-            top: 0,
-            right: 0,
-          }}
-        />
-        <div
-          style={{
-            height: "10px",
-            width: "200px",
-            background: "black",
-            marginLeft: "120px",
-          }}
-        />
-        <div
-          style={{
-            height: "300px",
-            width: "10px",
-            background: "black",
-            marginLeft: "120px",
+      {BODY_PARTS.slice(0, inCorrectLetter)}
+      <div
+        style={{
+          height: "50px",
+          width: "10px",
+          background: "black",
+          position: "absolute",
+          top: 0,
+          right: 0,
+        }}
+      />
+      <div
+        style={{
+          height: "10px",
+          width: "200px",
+          background: "black",
+          marginLeft: "120px",
+        }}
+      />
+      <div
+        style={{
+          height: "300px",
+          width: "10px",
+          background: "black",
+          marginLeft: "120px",
 
-          }}
-        />
-        <div style={{ height: "10px", width: "250px", background: "black" }} />
-      </div>
+        }}
+      />
+      <div style={{ height: "10px", width: "250px", background: "black" }} />
+    </div>
+     }
       </div>
        </>
     )

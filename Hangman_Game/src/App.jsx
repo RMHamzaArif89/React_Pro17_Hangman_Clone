@@ -22,13 +22,20 @@ function App() {
  
 const inCorrectLetter=guessedWord.filter(
   letter=>!guessWord.word.includes(letter))
+  
+const CorrectLetter=guessWord.word.split('').every(
+  letter=>guessedWord.includes(letter))
+
 
 
  let checkStatus=()=>{
   if(inCorrectLetter.length>=6){
     setStatus(false)
-    console.log('lose')
+    
   }
+  
+ 
+ 
  }
   useEffect(()=>{
      checkStatus()
@@ -43,7 +50,7 @@ const inCorrectLetter=guessedWord.filter(
   <div className="hint">Hint:{guessWord.hint}</div>
   <div className="length">lengthOfWord:{guessWord.word.split('').length}</div>
   <div className="word">{guessWord.word}</div>
- <Hangman inCorrectLetter={inCorrectLetter.length}/>
+ <Hangman inCorrectLetter={inCorrectLetter.length} CorrectLetter={CorrectLetter}/>
  <Alphabets word={guessWord.word} guessedWordFunc={guessedWordFunc} status={status}/>
 </div>
  </>

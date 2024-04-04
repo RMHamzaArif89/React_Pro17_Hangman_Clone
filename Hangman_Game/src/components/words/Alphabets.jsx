@@ -7,7 +7,7 @@ let Data=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r
 function Alphabets({word,guessedWordFunc,status}) {
     let[data,setData]=useState(Data)
     let[val,setValue]=useState([])
-    let[disable,setDisable]=useState(status)
+    
 
 
 
