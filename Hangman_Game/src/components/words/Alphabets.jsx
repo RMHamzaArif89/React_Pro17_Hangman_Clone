@@ -4,27 +4,37 @@ import './alpha.css'
 let Data=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
 
-function Alphabets({handleFunc2}) {
+function Alphabets({word,guessedWordFunc,status}) {
     let[data,setData]=useState(Data)
     let[val,setValue]=useState([])
+    let[disable,setDisable]=useState(status)
+
+
+
     
   return (
 
    <>
    <div className="deshes-con">
   {
-    val.map((v)=>{
-      return <div className="deshes">{v}</div>
+    word.split('').map((v,i)=>{
+      return <div className="deshes" 
+      style={{visibility:val.includes(v)?'visible':'hidden'}} 
+      key={i}>{v}</div>
     })
   }
    </div>
-   <button onClick={handleFunc2(val)}>check</button>
+   
    <div className='alpha-con'>
-     {
-        data.map((val)=>{
-         return <div className="alpha-box" onClick={(e)=>{setValue((pre)=>[...pre,val])}}>{val}</div>
+
+     {status?
+        data.map((val,i)=>{
+         return <button 
+          className="alpha-box" 
+         onClick={(e)=>{setValue((pre)=>[...pre,val]),guessedWordFunc(val)}}
+         key={i}>{val}</button>
         })
-     }
+     :'You lost the game'}
     </div>
    </>
   )

@@ -1,18 +1,19 @@
 .deshes-con{
     width: 200px;
-    height: 120px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1%;
+    gap: 1.5rem;
     
 }
 .deshes{
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid black;
     font-size: 2rem;
     color: black;
     font-weight: bolder;
-    padding: 12px;
+    padding: 6px;
+
     
 }
 .alpha-con{

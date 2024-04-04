@@ -1,29 +1,50 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './App.css'
-import GuessWord from './components/GuessWord/GuessWord'
 import { Hangman } from './components/hangman/Hangman'
 import Alphabets from './components/words/Alphabets'
+import Words from './components/GuessWord/words'
 
 function App() {
-  let[word,setWord]=useState('')
-  let[guessword,setGuessWord]=useState('')
-  let handleFunc=(e)=>{
-  // setWord(e)
-    
+
+  let[status,setStatus]=useState(true)
+  let [guessWord,setGuessWord]=useState(()=>{
+    return Words[Math.floor(Math.random() * Words.length)]
+
+   })
+
+   let[guessedWord,setGuessedWord]=useState([])
+   let guessedWordFunc=(e)=>{
+    setGuessedWord((pre)=>[...pre,e])
+  
+
+   }
+ 
+const inCorrectLetter=guessedWord.filter(
+  letter=>!guessWord.word.includes(letter))
+
+
+ let checkStatus=()=>{
+  if(inCorrectLetter.length>=6){
+    setStatus(false)
+    console.log('lose')
   }
-  let handleFunc2=(e)=>{
-  // setGuessWord(e)
-    
-  }
+ }
+  useEffect(()=>{
+     checkStatus()
+  },)
+  
+ 
   
 
   return (
  <>
 <div className="app-con">
-<GuessWord handleFunc={handleFunc}/>
- <Hangman length={length}/>
- <Alphabets handleFunc2={handleFunc2}/>
+  <div className="hint">Hint:{guessWord.hint}</div>
+  <div className="length">lengthOfWord:{guessWord.word.split('').length}</div>
+  <div className="word">{guessWord.word}</div>
+ <Hangman inCorrectLetter={inCorrectLetter.length}/>
+ <Alphabets word={guessWord.word} guessedWordFunc={guessedWordFunc} status={status}/>
 </div>
  </>
   )
