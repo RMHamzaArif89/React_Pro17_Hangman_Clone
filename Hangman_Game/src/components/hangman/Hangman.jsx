@@ -92,7 +92,6 @@ const HEAD = (
   )
   
   const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
-  
 //  let numberOfGuesses=3;
   
   export function Hangman({ numberOfGuesses }) {
