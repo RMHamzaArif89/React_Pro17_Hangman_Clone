@@ -1,0 +1,47 @@
+.deshes-con{
+    width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+    
+}
+.deshes{
+    border-bottom: 2px solid black;
+    font-size: 2rem;
+    color: black;
+    font-weight: bolder;
+    padding: 12px;
+    
+}
+
+.alpha-con{
+    width: 40%;
+    height: 200px;
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(180deg,yellowgreen,red);
+    padding: 1%;
+    border-radius: 8px;
+    gap: 2%;
+}
+.alpha-box{
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,skyblue,lightgreen);
+    border-radius: 8px;
+    transition: linear 0.4s;
+    font-size: 1.4rem;
+    color: blue;
+    font-weight: bold;
+}
+.alpha-box:hover{
+    background: green;
+    cursor: pointer;
+}
