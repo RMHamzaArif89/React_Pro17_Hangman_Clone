@@ -13,10 +13,6 @@ function GuessWord({handleFunc}) {
     
       handleFunc(data.split(''))
       
-    
-
-    
-    
    
      return (
      <>

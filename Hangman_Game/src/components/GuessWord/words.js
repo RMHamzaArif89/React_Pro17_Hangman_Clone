@@ -36,6 +36,7 @@ const Words = [
         hint: "The study of past events and human civilization."
     },
     {
+        
         word: "pizza",
         hint: "A savory dish consisting of a round, flattened base with toppings."
     },
