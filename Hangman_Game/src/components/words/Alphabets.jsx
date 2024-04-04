@@ -8,7 +8,6 @@ function Alphabets({handleFunc2}) {
     let[data,setData]=useState(Data)
     let[val,setValue]=useState([])
     
-   
   return (
 
    <>
